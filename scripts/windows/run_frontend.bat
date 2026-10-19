@@ -1,6 +1,6 @@
 @echo off
 title SentriX Frontend (Port 5173)
-cd /d "%~dp0frontend"
+cd /d "%~dp0..\..\frontend"
 set "PATH=C:\Program Files\nodejs;%PATH%"
 
 echo =======================================================

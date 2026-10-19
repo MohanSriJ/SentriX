@@ -1,6 +1,6 @@
 @echo off
 title SentriX Public Ngrok Tunnel
-cd /d "%~dp0"
+cd /d "%~dp0..\.."
 set "PATH=C:\Users\mohan\AppData\Local\Microsoft\WindowsApps;%PATH%"
 
 echo =======================================================
