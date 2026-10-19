@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: sentrix-platform
+    env: docker
+    plan: free
+    region: oregon
+    dockerfilePath: Dockerfile
+    envVars:
+      - key: PORT
+        value: 8000
+      - key: SIMULATION_ENABLED
+        value: "true"
+      - key: SECRET_KEY
+        generateValue: true

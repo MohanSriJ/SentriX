@@ -1,0 +1,144 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-slate-50 text-slate-900 dark:bg-[#070C18] dark:text-slate-100 antialiased selection:bg-blue-600 selection:text-white font-sans transition-colors duration-200;
+  }
+}
+
+/* Custom Sleek Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #070C18;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 9999px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #1E2D48;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* Leaflet Containment & Theming */
+.leaflet-container {
+  font-family: inherit;
+  background-color: #070C18 !important;
+  isolation: isolate;
+  z-index: 0 !important;
+}
+
+html:not(.dark) .leaflet-container {
+  background-color: #F8FAFC !important;
+}
+
+/* Map tiles tactical dark mode styling (ZERO watermarks, cool dark-navy tactical radar appearance) */
+.sentrix-tactical-tiles {
+  filter: brightness(0.62) invert(1) contrast(3.2) hue-rotate(200deg) saturate(0.35) brightness(0.72) !important;
+}
+
+.sentrix-daylight-tiles {
+  filter: none !important;
+}
+
+.leaflet-popup-content-wrapper {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  border-radius: 1rem !important;
+}
+
+.leaflet-popup-tip-container {
+  display: none !important;
+}
+
+.leaflet-popup-content {
+  margin: 0 !important;
+  line-height: inherit !important;
+}
+
+.leaflet-control-zoom {
+  border: 1px solid #1E2D48 !important;
+  border-radius: 12px !important;
+  overflow: hidden !important;
+  background-color: #0F172A !important;
+}
+
+html:not(.dark) .leaflet-control-zoom {
+  border: 1px solid #CBD5E1 !important;
+  background-color: #FFFFFF !important;
+}
+
+.leaflet-control-zoom-in,
+.leaflet-control-zoom-out {
+  background-color: #0F172A !important;
+  color: #94A3B8 !important;
+  border-color: #1E2D48 !important;
+}
+
+html:not(.dark) .leaflet-control-zoom-in,
+html:not(.dark) .leaflet-control-zoom-out {
+  background-color: #FFFFFF !important;
+  color: #475569 !important;
+  border-color: #E2E8F0 !important;
+}
+
+.leaflet-control-zoom-in:hover,
+.leaflet-control-zoom-out:hover {
+  background-color: #1E293B !important;
+  color: #FFFFFF !important;
+}
+
+html:not(.dark) .leaflet-control-zoom-in:hover,
+html:not(.dark) .leaflet-control-zoom-out:hover {
+  background-color: #F1F5F9 !important;
+  color: #0F172A !important;
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spinSlow 12s linear infinite;
+}
